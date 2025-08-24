@@ -119,42 +119,102 @@ nav a:hover {
 }
 
 .cta-button {
-    background-color: #d84315;
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
     color: white;
-    padding: 10px 20px;
+    padding: 15px 30px;
     text-decoration: none;
-    font-size: 1em;
-    border-radius: 5px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border-radius: 50px;
+    display: inline-block;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 25px rgba(255, 107, 107, 0.3);
+    border: 2px solid transparent;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .cta-button:hover {
-    background-color: #bf360c;
+    background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255, 107, 107, 0.4);
+    border-color: rgba(255, 255, 255, 0.3);
 }
 
 /* Benefits Section */
 #benefits {
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    max-width: 800px;
-    text-align: left;
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('img/yoga_in_nature.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
 }
 
 #benefits h2 {
     text-align: center;
-    color: #333;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.benefits-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.benefit-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.benefit-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+
+.benefit-icon {
+    font-size: 3em;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.benefit-card h3 {
+    font-size: 1.4em;
     margin-bottom: 15px;
+    color: #fff;
 }
 
-#benefits ul {
-    list-style-type: disc;
-    padding-left: 40px;
-}
-
-#benefits li {
-    margin-bottom: 10px;
+.benefit-card p {
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
     font-size: 1.1em;
+}
+
+/* Responsive Benefits */
+@media (max-width: 768px) {
+    .benefits-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    #benefits h2 {
+        font-size: 2em;
+    }
+    
+    .benefit-card {
+        padding: 25px;
+    }
 }
 
 /* Logo Styles */
@@ -169,11 +229,39 @@ nav a:hover {
     padding: 0;
 }
 
+.logo a {
+    text-decoration: none !important;
+    display: block;
+    color: inherit;
+}
+
+.logo a:hover {
+    text-decoration: none !important;
+    color: inherit !important;
+    background: none !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+.logo a:focus {
+    text-decoration: none !important;
+    color: inherit !important;
+    background: none !important;
+    outline: none !important;
+}
+
 .logo img {
     height: 115px;
     width: auto;
     display: block;
     border-radius: 70px;
+    transition: none !important;
+}
+
+.logo img:hover {
+    transform: none !important;
+    box-shadow: none !important;
+    opacity: 1 !important;
 }
 
 /* Footer Section */
@@ -208,39 +296,86 @@ footer h3 {
 /* Responsive Navigation and Logo for Mobile */
 @media (max-width: 700px) {
     nav {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
         height: auto;
-        padding-left: 0;
-        gap: 0;
+        min-height: 80px;
+        padding: 10px 15px;
+        gap: 5px;
         position: relative;
+        background: rgba(255, 112, 67, 0.95);
+        backdrop-filter: blur(10px);
+        flex-wrap: wrap;
     }
 
     .logo {
         position: static;
-        margin: 10px auto 0 auto;
+        margin: 0;
         transform: none;
         display: flex;
         justify-content: center;
-        width: 100%;
+        width: auto;
+        order: 0;
+        flex-shrink: 0;
     }
 
     .logo img {
-        height: 70px;
-        border-radius: 35px;
+        height: 50px;
+        border-radius: 25px;
         padding: 2px;
     }
 
     nav a, .dropdown {
-        display: block;
-        width: 100%;
-        text-align: left;
-        padding: 12px 20px;
-        font-size: 18px;
+        display: inline-block;
+        width: auto;
+        text-align: center;
+        padding: 10px 8px;
+        font-size: 13px;
+        border: none;
+        margin: 2px;
+        transition: background-color 0.3s ease;
+        border-radius: 6px;
+        white-space: nowrap;
+        flex-shrink: 0;
+    }
+
+    nav a:hover, .dropdown:hover {
+        background-color: rgba(255, 255, 255, 0.2);
     }
 
     .dropdown-content {
-        top: 70px; /* Match your mobile nav height */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        border-radius: 8px;
+        background: rgba(255, 112, 67, 0.95);
+        margin-top: 5px;
+        display: none;
+        z-index: 1000;
+    }
+
+    .dropdown:hover .dropdown-content,
+    .dropdown:focus-within .dropdown-content {
+        display: block;
+    }
+
+    .dropdown-content a {
+        padding: 10px 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        text-align: center;
+        font-size: 14px;
+        display: block;
+    }
+
+    .dropdown-content a:last-child {
+        border-bottom: none;
+    }
+
+    .dropdown-content a:hover {
+        background-color: rgba(255, 255, 255, 0.2);
     }
 }
 .Links{
@@ -260,4 +395,300 @@ footer h3 {
     margin: 40px auto;
     text-align: center;
     backdrop-filter: blur(2px);
+}
+
+nav a.active,
+.dropdown-content a.active,
+nav .dropbtn.active {
+    background-color: #fff;
+    color: #d84315 !important;
+    font-weight: bold;
+    border-radius: 6px;
+}
+
+/* Gallery Section */
+#gallery {
+    padding: 40px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/yoga_in_nature.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+#gallery h2 {
+    text-align: center;
+    color: white;
+    margin-bottom: 30px;
+    font-size: 2.2em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-item {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.4);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    object-position: center;
+    display: block;
+}
+
+.gallery-item h3 {
+    color: white;
+    margin: 20px 20px 10px 20px;
+    font-size: 1.3em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+.gallery-item p {
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 20px 20px 20px;
+    line-height: 1.6;
+}
+
+/* Responsive Gallery */
+@media (max-width: 768px) {
+    .gallery-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .gallery-item img {
+        height: 180px;
+    }
+}
+
+/* Service Content Styles */
+.service-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.feature {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.feature h3 {
+    color: #d84315;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.feature p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.session-details {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    margin: 30px 0;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.session-details h2 {
+    color: #d84315;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.session-details ul {
+    list-style: none;
+    padding: 0;
+}
+
+.session-details li {
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: #666;
+}
+
+.session-details li:last-child {
+    border-bottom: none;
+}
+
+.cta-section {
+    text-align: center;
+    margin: 40px 0 20px 0;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.cta-section h3 {
+    color: #d84315;
+    margin-bottom: 15px;
+    font-size: 1.4em;
+}
+
+.cta-section p {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 1.1em;
+}
+
+/* Responsive Service Content */
+@media (max-width: 768px) {
+    .service-features {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .feature, .session-details, .cta-section {
+        padding: 20px;
+    }
+}
+
+/* Contact Section */
+#contact {
+    padding: 60px 20px;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/yoga_in_nature.webp');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.contact-intro {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 50px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.contact-content {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+
+.contact-info-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    max-width: 500px;
+    width: 100%;
+}
+
+.contact-info-card h3 {
+    color: #d84315;
+    margin-bottom: 25px;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.contact-icon {
+    font-size: 1.5em;
+    margin-right: 15px;
+    margin-top: 5px;
+}
+
+.contact-item h4 {
+    color: white;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.contact-item p, .contact-item a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    margin: 0;
+}
+
+.contact-item a:hover {
+    color: #ffcc80;
+}
+
+/* Special styling for Call Us link */
+.contact-item a[href^="tel:"] {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+}
+
+.contact-item a[href^="tel:"]:hover {
+    background: linear-gradient(135deg, #ee5a24, #ff6b6b);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+    color: white;
+}
+
+/* Responsive Contact Section */
+@media (max-width: 768px) {
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    #contact h2 {
+        font-size: 2em;
+    }
+    
+    .contact-info-card {
+        padding: 25px;
+    }
+    
+    .contact-item {
+        padding: 12px;
+    }
 }
