@@ -118,6 +118,118 @@
             </div>
         </div>
     </section>
+    <!-- Support Section -->
+    <section id="support">  
+        <div class="support-container">
+            <h2>Feedback & Support</h2>
+            <p class="support-intro">We value your feedback! Share your experience, suggestions, or ask us any questions about our group yoga classes.</p>
+            
+            <div class="feedback-content">
+                <div class="feedback-form">
+                    <h3>Share Your Feedback</h3>
+                    <form action="https://formspree.io/f/mdklndeo" method="POST" class="feedback-form-container">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="feedback-type">Feedback Type *</label>
+                            <select id="feedback-type" name="feedback-type" required>
+                                <option value="">Select feedback type</option>
+                                <option value="general">General Feedback</option>
+                                <option value="suggestion">Suggestion</option>
+                                <option value="complaint">Complaint</option>
+                                <option value="appreciation">Appreciation</option>
+                                <option value="question">Question</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Service (if applicable)</label>
+                            <select id="service" name="service">
+                                <option value="">Select service</option>
+                                <option value="online-sessions">Online Sessions</option>
+                                <option value="personal-training">Personal Training</option>
+                                <option value="group-classes" selected>Group Classes</option>
+                                <option value="home-visits">Home Visits</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="rating">Overall Rating</label>
+                            <div class="rating-stars">
+                                <input type="radio" id="star5" name="rating" value="5">
+                                <label for="star5">★</label>
+                                <input type="radio" id="star4" name="rating" value="4">
+                                <label for="star4">★</label>
+                                <input type="radio" id="star3" name="rating" value="3">
+                                <label for="star3">★</label>
+                                <input type="radio" id="star2" name="rating" value="2">
+                                <label for="star2">★</label>
+                                <input type="radio" id="star1" name="rating" value="1">
+                                <label for="star1">★</label>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Please share your feedback about our group yoga classes..." required></textarea>
+                        </div>
+                        
+                        <!-- Hidden fields for better email formatting -->
+                        <input type="hidden" name="_subject" value="Group Classes Feedback - Bhu-Yog Mantra">
+                        <input type="hidden" name="_next" value="thank-you.html">
+                        <input type="hidden" name="_captcha" value="false">
+                        
+                        <div class="form-group">
+                            <button type="submit" class="submit-btn">Submit Feedback</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="feedback-info">
+                    <h3>Why Your Feedback Matters</h3>
+                    <div class="feedback-benefits">
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🎯</span>
+                            <h4>Improve Our Services</h4>
+                            <p>Help us enhance our group class programs and teaching methods.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">💡</span>
+                            <h4>Share Ideas</h4>
+                            <p>Suggest new class formats, poses, or wellness topics for group sessions.</p>
+                        </div>
+                        <div class="benefit-item">
+                            <span class="benefit-icon">🤝</span>
+                            <h4>Build Community</h4>
+                            <p>Contribute to creating a better group yoga experience for everyone.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-alternative">
+                        <h4>Prefer to Contact Directly?</h4>
+                        <p>You can also reach us directly via:</p>
+                        <div class="direct-contact">
+                            <a href="mailto:bhuyogmantra1223@gmail.com" class="contact-link">📧 Email Us</a>
+                            <a href="tel:+916397654919" class="contact-link">📞 Call Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Footer Section -->
     <footer>
         <div class="quick-links">
